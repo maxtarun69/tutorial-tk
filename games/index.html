@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake Game</title>
+<style>
+    body {
+    background-image: url('snake.jpg');
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+canvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+    background-color: #8FBC8F;
+    height: 400px;
+    width: 400px;
+}
+#startScreen, #gameOverScreen {
+    text-align: center;
+    margin-top: 20px;
+}
+#gameOverScreen {
+    display: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <center>
+        <h2>Snake Master</h2>
+        <p>This game is developed by Tarun Kurrey. Click the button below to start the game.</p>
+    </center>
+    <canvas id="gameCanvas"></canvas>
+    <div id="startScreen">
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div id="gameOverScreen">
+        <button onclick="restartGame()">Restart</button>
+    </div>
+
+    <audio id="startSound" src="sounds/start.wav"></audio>
+    <audio id="eatSound" src="sounds/eat.mp3"></audio>
+    <audio id="specialEatSound" src="sounds/specialeat.wav"></audio>
+    <audio id="gameOverSound" src="sounds/gameover.wav"></audio>
+    <audio id="countdownSound" src="sounds/countdown.wav"></audio>
+
+    <script src="game.js"></script>
+    <script src="touchControls.js"></script>
+</body>
+</html>
